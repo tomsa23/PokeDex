@@ -20,9 +20,7 @@ fetch(url)
 function pokeData(pokeDetails) {
     if(pokeDetails.types) {
         let types = pokeDetails.types.map(typeInfo => typeInfo.type.name).join(', ');
-        // let pokeStats = pokeDetails.stats(statsInfo => statsInfo.stats.name).join(', ');
         let pokeStats = pokeDetails.stats.map(statInfo => `${statInfo.stat.name}: ${statInfo.base_stat}`).join(', ');
-        // let pruebaPokeIndice = pokeDetails.game_indices.map(indexPoke => `${indexInfo.game_indices.name}: ${indexInfo.game_indices.value}`).join(', ')
         let pruebaPokeIndice = pokeDetails.game_indices.map(indexPoke => `${indexPoke.version.name}: ${indexPoke.game_index}`).join(', ');
         let image = pokeDetails.sprites.front_default;
 
